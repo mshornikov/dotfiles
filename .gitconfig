@@ -1,0 +1,8 @@
+[user]
+	name = Mikhail Shornikov
+	email = mikhail.shornikov@mail.ru
+[core]
+	autocrlf = input
+[init]
+	defaultBranch = main
+
