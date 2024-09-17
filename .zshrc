@@ -1,17 +1,13 @@
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
+export PATH=$PATH:~/.spoof-dpi/bin
+
 # Bun
 export BUN_INSTALL="$HOME/.bun" 
 export PATH="$BUN_INSTALL/bin:$PATH"
 # bun completions
 # [ -s "/Users/mshornikov/.bun/_bun" ] && source "/Users/mshornikov/.bun/_bun"
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   # If you're using macOS, you'll want this enabled
@@ -77,3 +73,12 @@ alias ls='ls -a --color'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# fnm
+FNM_PATH="/Users/mshornikov/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/mshornikov/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
