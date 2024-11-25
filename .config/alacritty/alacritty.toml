@@ -1,7 +1,7 @@
+[general]
 import = [
   '~/.config/alacritty/catppuccin-mocha.toml'
 ]
-
 live_config_reload = true
 
 [env]
